@@ -1,0 +1,9 @@
+sep=|
+Input| Output| Model Name| Example
+text| text| chat| GPT-4o, Claude, Gemini, Mistral
+text| Image| Image Generator| DALL-E
+Image, Video| text| Vision| GPT-4o, Claude, Gemini
+text| audio| Text-To-Speech| TTS
+audio, Video| text| Transcript| Whisper
+text| Video| Not practical yet| No pubic APIs
+Image| Video| Stable Diffusion| Stability.ai

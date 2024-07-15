@@ -1,0 +1,10 @@
+Some openai useful links
+
+api-keys : https://platform.openai.com/api-keys
+documentation: https://platform.openai.com/docs/overview
+
+Some of the repos Teacher used -
+https://github.com/kousen/AiJavaLabs
+https://github.com/kousen/springaiexamples
+https://github.com/kousen/OpenAIClient
+https://github.com/kousen/openaidemo
