@@ -16,7 +16,7 @@ public class FileUtils {
             }
             Path filePath = directory.resolve(fileName);
 
-            Files.write(filePath, data, StandardOpenOption.CREATE_NEW);
+            Files.write(filePath, data, StandardOpenOption.CREATE);
             System.out.printf("saved %s to %s%n", fileName, directory.toAbsolutePath());
         } catch (IOException e) {
             throw new UncheckedIOException(
