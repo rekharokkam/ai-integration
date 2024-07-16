@@ -5,7 +5,7 @@ build/
 !gradlew.bat
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/src/main/resources/test.mp3
+**/src/main/resources/test.mp3
 
 ###Mac###
 .DS_Store
