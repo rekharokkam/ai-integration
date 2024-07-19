@@ -13,8 +13,7 @@ class TextToSpeechServiceTest {
         byte[] result = service.generateMP3(
                 "tts-1",
                 """
-                        Now that I know how to generate audio from text,
-                        I can use this feature in my applications.
+                        Namaskara, hegiddira. Manekade yella soukyana
                         """,
                 "fable"
         );

@@ -12,7 +12,7 @@ https://github.com/kousen/openaidemo
 Simple curl command to use the tts model to generate audion from text using tts model
 --------------------------------------------------------------------------------------
 curl https://api.openai.com/v1/audio/speech \
--H "Authorization: Bearer sk-proj-vuggmqgP8jGelobO5JA9T3BlbkFJ8rea28JuntRq5KjXQQAx" \
+-H "Authorization: Bearer <token>" \
 -H "Content-Type: application/json" \
 -d '{
     "model" : "tts-1",
@@ -23,3 +23,9 @@ curl https://api.openai.com/v1/audio/speech \
 
 there are 2 model choices here - tts-1 OR tts-1-hd
 voice may be - alloy, echo, fable, onyx, nova, shimmer
+
+curl to fetch all the models
+----------------------------
+curl https://api.openai.com/v1/models \
+-H "Authorization: Bearer <token>" \
+-H "Accept: application/json"
