@@ -29,3 +29,12 @@ curl to fetch all the models
 curl https://api.openai.com/v1/models \
 -H "Authorization: Bearer <token>" \
 -H "Accept: application/json"
+
+langchain4j - https://docs.langchain4j.dev/intro
+
+https://github.com/kousen/AiJavaLabs - this repo has the readme and examples for Ollama
+
+java records are final, they cannot be extended.
+java records have an implicit super class java.lang.Record, so you cannot place them in inheritance hierarchy, however records can implement interfaces.
+
+In sealed Interfaces you can restrict who is allowed to implement the interfaces.

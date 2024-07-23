@@ -3,7 +3,6 @@ package com.learning.ai.service;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.learning.ai.javabeans.OpenAiRecords;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,7 +13,7 @@ import java.net.http.HttpResponse;
 import static com.learning.ai.javabeans.OpenAiRecords.*;
 import static com.learning.ai.util.CommonConstants.OPENAI_API_KEY;
 
-public class OpenAiService {
+public class FetchAllModelsService {
     private static final String GET_MODELS_URL = "https://api.openai.com/v1/models";
 
 //    private final Gson gson = new Gson ();

@@ -1,6 +1,5 @@
 package com.learning.ai.service;
 
-import com.learning.ai.javabeans.OpenAiRecords;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -9,12 +8,12 @@ import java.util.List;
 import static com.learning.ai.javabeans.OpenAiRecords.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class OpenAiServiceTest {
-    private final OpenAiService openAiService = new OpenAiService();
+class FetchAllModelsServiceTest {
+    private final FetchAllModelsService fetchAllModelsService = new FetchAllModelsService();
 
     @Test
     void listModels () {
-        ModelList modelList = openAiService.getModelsList();
+        ModelList modelList = fetchAllModelsService.getModelsList();
         assertNotNull(modelList);
 
         List<String> models = modelList.data().stream()
@@ -31,7 +30,7 @@ class OpenAiServiceTest {
 
     @Test
     void ListModelsInFull () {
-        List<ModelList.Model> models = openAiService.getModelsList().data();
+        List<ModelList.Model> models = fetchAllModelsService.getModelsList().data();
         models.forEach(System.out::println);
     }
 }
