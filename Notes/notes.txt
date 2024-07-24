@@ -30,11 +30,65 @@ curl https://api.openai.com/v1/models \
 -H "Authorization: Bearer <token>" \
 -H "Accept: application/json"
 
+curl to generate images with DALL-E
+-----------------------------------
+curl https://api.openai.com/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-proj-vuggmqgP8jGelobO5JA9T3BlbkFJ8rea28JuntRq5KjXQQAx" \
+  -d '{
+    "model": "dall-e-3",
+    "prompt": "Create an image that captures the adorable essence of a baby sea otter. This little marine mammal should have a thick layer of brown fur for insulation against the cold ocean waters. Its small face is emphasized with bright, curious eyes and a tiny nose. The otter is lying on its back, playfully weaved into a bed of floating kelp, its favoured habitat. Its lithe body appears buoyant, tumbling in the undercurrents. Bear witness to the marvel of its dainty fingers, perfectly equipped to reach out for shellfish or play with pebbles.",
+    "n": 1,
+    "size": "1024x1024"
+  }'
+
+
 langchain4j - https://docs.langchain4j.dev/intro
 
 https://github.com/kousen/AiJavaLabs - this repo has the readme and examples for Ollama
 
 java records are final, they cannot be extended.
 java records have an implicit super class java.lang.Record, so you cannot place them in inheritance hierarchy, however records can implement interfaces.
+As stated in the JEP 395, records are classes that act as transparent carriers for immutable data.
 
 In sealed Interfaces you can restrict who is allowed to implement the interfaces.
+
+Compact Constructors
+--------------------
+Compact constructors allow us to customize (normalize) the value of a certain field in a concise way. Let’s imagine we need an object representing available API endpoints:
+
+record ApiEndpoint(String name, HttpMethod method, String url) {
+    ApiEndpoint {
+        name = name.toUpperCase();
+        // no need to "re-declare" 'method'
+        // no need to "re-declare" 'url'
+    }
+}
+
+var endpoint = new ApiEndpoint(
+    "test",
+    HttpMethod.GET,
+    "https://my-awesome-app.com/test"
+);
+System.out.println(endpoint);
+
+// prints:
+// ApiEndpoint[name=TEST, method=GET, url=https://my-awesome-app.com/test]
+
+record DateRange(LocalDate from, LocalDate to) {
+    DateRange {
+        Objects.requireNonNull(from, "'from' date is required");
+
+        if (to != null && from.isAfter(to)) {
+            throw new IllegalArgumentException(
+                "'from' date must be earlier than 'to' date"
+            );
+        }
+    }
+
+    DateRange(LocalDate from) {
+        this(from, null); // will call compact constructor validations too!
+    }
+}
+
+Java 21 added Sequenced collections (getFirst(), getLast(), ...) to List
